@@ -2,46 +2,46 @@ import { useState,useEffect } from "react";
 
 export default function TodoList() {
 
-   function getStoredTodos(){
-    let data = localStorage.getItem("todos")
-    let json = JSON.parse(data)
-    if(json){
-        return json
-    }
-    return []
+  //  function getStoredTodos(){
+  //   let data = localStorage.getItem("todos")
+  //   let json = JSON.parse(data)
+  //   if(json){
+  //       return json
+  //   }
+  //   return []
 
-   }
+  //  }
 
-  const [todos, setTodos] = useState(getStoredTodos());
+  // const [todos, setTodos] = useState(getStoredTodos());
 
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos))
-  }, [todos])
+  // useEffect(() => {
+  //   localStorage.setItem("todos", JSON.stringify(todos))
+  // }, [todos])
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    let task = event.target.task.value;
+  // function handleSubmit(event) {
+  //   event.preventDefault();
+  //   let task = event.target.task.value;
     
-    if (!task) {
-      alert("Please Provide a valid task");
-      return;
-    }
+  //   if (!task) {
+  //     alert("Please Provide a valid task");
+  //     return;
+  //   }
     
-    setTodos([...todos, { task: task, completed: false }]);
-    event.target.reset();
-  }
+  //   setTodos([...todos, { task: task, completed: false }]);
+  //   event.target.reset();
+  // }
 
-  function checktaskStatus(index) {
-    let newTodos = [...todos];
-    newTodos[index].completed = !newTodos[index].completed;
-    setTodos(newTodos);
-  }
+  // function checktaskStatus(index) {
+  //   let newTodos = [...todos];
+  //   newTodos[index].completed = !newTodos[index].completed;
+  //   setTodos(newTodos);
+  // }
 
-  function deleteTask(index) {
-    let newTodos = [...todos];
-    newTodos.splice(index, 1);
-    setTodos(newTodos);
-  }
+  // function deleteTask(index) {
+  //   let newTodos = [...todos];
+  //   newTodos.splice(index, 1);
+  //   setTodos(newTodos);
+  // }
 
   return (
     <div className="container my-5">

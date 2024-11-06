@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import TodoList from './TodoList'
+import Correction from './Correction';
 
 function App(){
   return(
     <>
-  <TodoList/>
+  <Correction/>
     </>
   )
 }
